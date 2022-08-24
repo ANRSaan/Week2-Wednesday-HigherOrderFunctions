@@ -16,13 +16,20 @@
 let charArr = []
 
 function hasUniqueChars (word){
-  for (let i = 0; i < word.length; i++){
-    if (charArr.includes(word[i])){
-       return false
-    }else {
+    let charArr = []
+    for (let i = 0; i < word.length; i++){
+        if (charArr.includes(word[i])){
+            return false
+        } else {
       charArr.push(word[i])}
-  }
+    }
   return true
 }
 
+// const hasUniqueChars = word => {
+//     for (let i = 0; i < word.length; i++){
+//         ((charArr.includes(word[i]) ? return false : charArr.push(word[i])))
+//     }
+//        return true
+// }
 console.log(hasUniqueChars("MoOday"))
