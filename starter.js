@@ -4,6 +4,14 @@
 
 // CODE HERE
 
+const add = (num1, num2) => num1 + num2
+const subtract = (num1, num2) => num1 - num2
+const multiply = (num1, num2) => num1 * num2
+const divide = (num1, num2) => num1 / num2
+
+const calculator = (num1, num2, callbackName) => callbackName(num1, num2)
+
+// console.log(calculator (3, 15, multiply))
 
 ///////////////////////
 ////// PET STORE //////
@@ -65,13 +73,48 @@ const catProducts = [
 
 // CODE HERE
 
+const applyFlatRateDiscount = (prod, disc) => {
+    prod.displayPrice = prod.basePrice - disc
+}
 
+const applyPercentageDiscount = (prod, disc) => {
+    prod.displayPrice = prod.basePrice * (1 - disc)
+}
+
+const applyDiscount = (arr, callbackName, disc) => {
+    arr.forEach((prod) => callbackName(prod, disc))
+}
+
+applyDiscount(catProducts, applyPercentageDiscount, .2)
+// console.log(catProducts)
 
 ////////////////////////
 ////// SANDWICHES //////
 ////////////////////////
 
 // CODE HERE
+
+const makeSandwich = (bread) => {
+    return (ingredients) => {
+        let order = `You ordered a ${bread} bread sandwich with `
+
+        for (let i = 0; i < ingredients.length; i++) {
+
+            if (i === ingredients.length - 1 && i !== 0) {
+                order += `and ${ingredients[i]}.`
+            } else if (ingredients.length === 1) {
+                order += `${ingredients[i]}.`
+            } else {
+                order += `${ingredients[i]}, `
+            }
+            }
+    
+        return order
+    }
+}
+
+const makeWheatSandwich = makeSandwich('wheat')
+console.log(makeWheatSandwich(['cheese', 'pickles', 'ham', 'mustard']))
 
 
 
@@ -138,7 +181,7 @@ const copyArrToSnakeCase = arr => {
 
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
-const mappedColors // = colors.map()
+// const mappedColors // = colors.map()
 
 /*
     Edit the formalGreeting function and use the built in .map method 
@@ -166,7 +209,7 @@ const formalGreeting = names => {
 
 const places = ['Binghampton', 'Albany', 'New York', 'Ithaca', 'Auburn', 'Rochester', 'Buffalo']
 
-const placesThatStartWithA // = places.filter()
+// const placesThatStartWithA // = places.filter()
 
 
 /*
@@ -244,4 +287,4 @@ const expenses = [
     }
 ]
 
-const remaining // = expenses.reduce(//callback, //initial value)
+// const remaining // = expenses.reduce(//callback, //initial value)
