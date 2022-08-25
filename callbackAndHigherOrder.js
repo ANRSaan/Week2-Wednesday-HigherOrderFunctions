@@ -194,30 +194,30 @@ var users = [
   },
 ]
 // Do not edit the code above.
-/*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
-  When the correct user object is found, invoke the callback with the user object as an argument.
-*/
 
 // CODE HERE 
 
-// const getUserById = (arr) => {
-//   return arr.filter(thing => thing.id.includes('16t'))
-    
+// const getUserById = (arr, string, cb) => {
+//   return cb(arr.filter(obj => obj.id === string)[0])
 // }
-// console.log(getUserById(users))
+
 const getUserById = (arr, string, cb) => {
-  return cb(arr.filter(thing => thing.id.includes(string))[0])
+  for (i =0; i < arr.length; i++){
+    if (arr[i].id === string){
+      cb(arr[i])
+    }
+  }
 }
+
 // console.log(getUserById(users, '16t'))
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
 ////////// CHALLENGE //////////
 
@@ -270,8 +270,8 @@ let addTen = addingFactory(10)
 
 // CODE HERE
 
-console.log(addTen(13))
-console.log(addTen(52))
+// console.log(addTen(13))
+// console.log(addTen(52))
 
 /*
   Let's make another function from the addingFactory. 
@@ -288,4 +288,4 @@ console.log(addTen(52))
 
 let addNUMBER = addingFactory(4)
 
-console.log(addNUMBER(16))
+// console.log(addNUMBER(16))

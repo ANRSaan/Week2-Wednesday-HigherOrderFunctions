@@ -98,7 +98,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 
 // CODE HERE
 
-const myStrongest  = monstersInYourPocket.filter(element => (element.CP >= 200))
+const myStrongest  = monstersInYourPocket.filter(element => (element['CP'] >= 200))
 
 // console.log(myStrongest)
 
@@ -144,6 +144,6 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 const bobsTotal = purchases.filter(person => 
   person.owner.includes('Bob')).map(item => 
-    item.price).reduce((total, index)=> total + index) 
+  item.price).reduce((total, num)=> total + num) 
 
 console.log(bobsTotal)
