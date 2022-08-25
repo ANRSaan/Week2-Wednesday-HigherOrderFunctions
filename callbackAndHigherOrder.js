@@ -210,7 +210,7 @@ const getUserById = (arr, string, cb) => {
 }
 
 // console.log(getUserById(users, '16t'))
-
+//
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
