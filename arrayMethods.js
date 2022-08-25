@@ -18,8 +18,11 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+const evenNumbers = mixedNumbers.filter(num => num %2 === 0)
 
+
+
+// console.log(evenNumbers);
 
 
 ////////// PROBLEM 2 //////////
@@ -39,7 +42,14 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
+
+let taxRate = 0.07
+
+const postTax = prices.map(price => price + (price * taxRate))
+
+// console.log(postTax)
+
+//const postTaxPrices // = prices.map(/* Provide Your Callback Here );
 
 
 
@@ -57,7 +67,12 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+
+const sum = populations.reduce((total, num) => total + num)
+
+// console.log(sum)
+
+//const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
 
 
 
@@ -82,7 +97,10 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+
+const myStrongest  = monstersInYourPocket.filter(element => (element.CP >= 200))
+
+// console.log(myStrongest)
 
 
 
@@ -101,6 +119,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 
 // CODE HERE
 
+const totals = orders.map(item => (item.price + (item.price * item.tax)))
+
+// console.log(totals)
 
 
 ////////// PROBLEM 6 //////////
@@ -120,3 +141,9 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+
+const bobsTotal = purchases.filter(person => 
+  person.owner.includes('Bob')).map(item => 
+    item.price).reduce((total, index)=> total + index) 
+
+console.log(bobsTotal)
