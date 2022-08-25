@@ -114,7 +114,7 @@ const makeSandwich = (bread) => {
 }
 
 const makeWheatSandwich = makeSandwich('wheat')
-console.log(makeWheatSandwich(['cheese', 'pickles', 'ham', 'mustard']))
+// console.log(makeWheatSandwich(['cheese', 'pickles', 'ham', 'mustard']))
 
 
 
@@ -181,7 +181,11 @@ const copyArrToSnakeCase = arr => {
 
 const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 
-// const mappedColors // = colors.map()
+const mappedColors  = colors.map((element) => 'pink')
+
+
+
+// console.log(mappedColors)
 
 /*
     Edit the formalGreeting function and use the built in .map method 
@@ -194,8 +198,10 @@ const colors = ['red', 'blue', 'yellow', 'green', 'orange']
 const formalNames = ['Bernard', 'Elizabeth', 'Conrad', 'Mary Margaret']
 
 const formalGreeting = names => {
-    // CODE HERE
+    return names.map ((name) => `Hello, ${name}`)
 }
+
+// console.log(formalGreeting(formalNames))
 
 // Call formalGreeting passing in the formalNames array
 
@@ -208,6 +214,10 @@ const formalGreeting = names => {
 */
 
 const places = ['Binghampton', 'Albany', 'New York', 'Ithaca', 'Auburn', 'Rochester', 'Buffalo']
+
+const PlacesThatStartWithA = places.filter((place) => place[0] === "A")
+
+// console.log(PlacesThatStartWithA)
 
 // const placesThatStartWithA // = places.filter()
 
@@ -236,6 +246,12 @@ let jobs = [
 
 // CODE HERE
 
+const identifier = (arr) => {
+    return arr.filter((job) => job.programmer)
+}
+
+// console.log(identifier(jobs))
+
 // call the function passing in the jobs array
 
 
@@ -252,13 +268,16 @@ let jobs = [
 const numsToReduce = [43, 7, 24, 79, 290]
 
 const productOfArray = numbers => {
-    // Code here
+    return numbers.reduce((accumulator, current) => accumulator * current)
 }
+
 
 // CODE HERE
 
 
 // call productOfArray passing in numsToReduce
+// console.log(productOfArray(numsToReduce))
+
 
 
 /*
@@ -287,4 +306,6 @@ const expenses = [
     }
 ]
 
-// const remaining // = expenses.reduce(//callback, //initial value)
+const remaining = expenses.reduce((total, current) => total - current.amount, budget)
+
+console.log(remaining)
