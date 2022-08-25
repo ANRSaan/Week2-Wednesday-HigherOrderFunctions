@@ -181,7 +181,7 @@ var users = [
     address: '167 East 500 North'
   },
   {
-    id: '15a',
+    id: '16t',
     email: 'cahlan@gmail.com',
     name: 'Cahlan',
     address: '135 East 320 North'
@@ -197,27 +197,28 @@ var users = [
 
 // CODE HERE 
 
+// The following sollution returns one object only: the first one found
 // const getUserById = (arr, string, cb) => {
-//   return cb(arr.filter(obj => obj.id === string)[0])
+//   cb(arr.filter(obj => obj.id === string))
 // }
 
-const getUserById = (arr, string, cb) => {
-  for (i =0; i < arr.length; i++){
-    if (arr[i].id === string){
-      cb(arr[i])
-    }
-  }
-}
+// The following sollution returns all objects found, regardless of how many
+// const getUserById = (arr, string, cb) => {
+//   for (i =0; i < arr.length; i++){
+//     if (arr[i].id === string){
+//       cb(arr[i])
+//     }
+//   }
+// }
 
-// console.log(getUserById(users, '16t'))
 //
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-getUserById(users, '16t', user => {
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-})
+// getUserById(users, '16t', user => {
+//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+// })
 
 ////////// CHALLENGE //////////
 
